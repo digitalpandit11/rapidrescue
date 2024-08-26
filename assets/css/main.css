@@ -94,8 +94,8 @@ h4,
 h5,
 h6 {
   /* color: var(--heading-color); */
-  /* color: #1a4767; */
-  color:white;
+  color: #1a4767;
+  /* color:white; */
   font-family: var(--heading-font);
 }
 
