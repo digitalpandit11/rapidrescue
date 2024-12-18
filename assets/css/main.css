@@ -98,6 +98,37 @@ h6 {
   /* color:white; */
   font-family: var(--heading-font);
 }
+p{
+  color: #ffffff;
+  font-size: 18px;
+}
+/* Media Query for Tablets (screens between 769px and 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tagline {
+    font-size: 22px; /* Adjust tagline font size for tablets */
+    text-align: center !important; /* Center-align tagline on tablets */
+  }
+
+  p {
+    font-size: 16px; /* Adjust paragraph size for tablets */
+    text-align: left !important; /* Optional: Align text differently for tablets */
+  }
+}
+
+/* Media Query for Mobile (screens up to 768px) */
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 20px; /* Adjust tagline font size for mobile */
+    text-align: center; /* Center-align tagline on mobile */
+  }
+
+  p {
+    font-size: 14px; /* Adjust paragraph size for mobile */
+    text-align: center; /* Center-align paragraph on mobile */
+  }
+}
+
+
 
 /* Pulsating Play Button
 ------------------------------*/
@@ -242,13 +273,20 @@ h6 {
 }
 
 .header .topbar {
-  /* background-color: var(--accent-color); */
   background-color: #1a4767;
   color: var(--contrast-color);
   height: 40px;
   padding: 0;
   transition: all 0.5s;
 }
+
+/* Media Query to hide topbar for devices with max-width of 768px */
+@media (max-width: 768px) {
+  .header .topbar {
+    display: none !important;
+  }
+}
+
 
 .header .branding {
   min-height: 60px;
@@ -260,7 +298,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  width: 70%;
   margin-right: 8px;
 }
 
@@ -540,7 +578,7 @@ h6 {
 }
 
 .footer .footer-top {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .footer .footer-about .logo {
@@ -565,6 +603,13 @@ h6 {
   font-size: 14px;
   font-family: var(--heading-font);
 }
+
+@media (max-width: 768px) {
+  .footer .footer-about p {
+    margin-bottom: -50px;
+  }
+}
+
 
 .footer .social-links a {
   display: flex;
@@ -594,6 +639,12 @@ h6 {
 
 .footer .footer-links {
   margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .footer .footer-links {
+    margin-bottom: -25px;
+  }
 }
 
 .footer .footer-links ul {
@@ -848,7 +899,7 @@ section,
 @media (max-height: 500px),
 (max-width: 580px) {
   .hero .carousel {
-    min-height: 100vh;
+    min-height: 105vh;
   }
 }
 
@@ -885,12 +936,6 @@ section,
   z-index: 3;
 }
 
-@media (max-width: 1200px) {
-  .hero .container {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-}
 
 .hero h2 {
   margin-bottom: 20px;
@@ -900,7 +945,8 @@ section,
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 30px;
+    font-size: 28px !important;
+    margin-top: 0px !important;
   }
 }
 
@@ -1032,11 +1078,22 @@ section,
   font-size: 36px;
   transition: ease-in-out 0.3s;
 }
+@media (max-width: 768px) {
+  .featured-services .service-item .icon i {
+    display: flex;
+    justify-content: center;
+    }
+}
 
 .featured-services .service-item h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 20px;
+}
+@media (max-width: 768px) {
+  .featured-services .service-item h4 {
+    text-align: center;
+  }
 }
 
 .featured-services .service-item h4 a {
@@ -1180,6 +1237,12 @@ section,
   position: relative;
   min-height: 400px;
 }
+@media (max-width: 768px) {
+  .features .features-image {
+    position: relative;
+    min-height: 150px;
+  }
+}
 
 .features .features-image img {
   position: absolute;
@@ -1198,16 +1261,20 @@ section,
   padding-bottom: 20px;
   position: relative;
 }
+@media (max-width: 768px) {
+  .features h3 {
+    text-align: center;
+  }
+}
 
 .features h3:after {
   content: "";
-  /* background: var(--accent-color); */
   background: #1a4767;
-  position: absolute;
-  display: block;
+  position: absolute !important;
+  display: block !important;
   width: 50px;
   height: 3px;
-  left: 0;
+  left: 120px;
   bottom: 0;
 }
 
