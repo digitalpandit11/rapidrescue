@@ -106,7 +106,7 @@ p{
 @media (min-width: 769px) and (max-width: 1024px) {
   .tagline {
     font-size: 22px; /* Adjust tagline font size for tablets */
-    text-align: center !important; /* Center-align tagline on tablets */
+    text-align: left !important; /* Center-align tagline on tablets */
   }
 
   p {
@@ -124,7 +124,26 @@ p{
 
   p {
     font-size: 14px; /* Adjust paragraph size for mobile */
-    text-align: center; /* Center-align paragraph on mobile */
+    text-align: left; /* Center-align paragraph on mobile */
+  }
+}
+.topbar {
+  font-size: 14px; /* Default font size for all text in the topbar */
+}
+
+.col-md-13 {
+  width: 25%; /* Desktop: 25% width */
+}
+
+@media (max-width: 1024px) {
+  .col-md-13 {
+    width: 50%; /* Tablet: 50% width */
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-13 {
+    width: 100%; /* Mobile: 100% width */
   }
 }
 
@@ -894,14 +913,27 @@ section,
   padding: 0;
   margin: 0;
   position: relative;
+  justify-content: center; 
 }
-
-@media (max-height: 500px),
-(max-width: 580px) {
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
   .hero .carousel {
-    min-height: 105vh;
+    min-height: 65vh;
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Optional: Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: left; /* Center items horizontally */
   }
 }
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero .carousel {
+    min-height: 65vh;
+  }
+}
+
+
 
 .hero img {
   position: absolute;
@@ -947,6 +979,7 @@ section,
   .hero h2 {
     font-size: 28px !important;
     margin-top: 0px !important;
+    text-align: left;
   }
 }
 
@@ -1261,11 +1294,22 @@ section,
   padding-bottom: 20px;
   position: relative;
 }
+/* Mobile (up to 768px) */
 @media (max-width: 768px) {
   .features h3 {
     text-align: center;
+    margin-top: 20px;
   }
 }
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .features h3 {
+    text-align: center;
+    margin-top: 20px; /* Optional: Different margin for tablets */
+  }
+}
+
 
 .features h3:after {
   content: "";
@@ -1274,8 +1318,20 @@ section,
   display: block !important;
   width: 50px;
   height: 3px;
-  left: 120px;
   bottom: 0;
+}
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .features h3:after {
+    left: 120px;
+  }
+}
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .features h3:after {
+    left: 0px;
+  }
 }
 
 .features .icon-box {
